@@ -2,7 +2,7 @@
   "name": "Live_text_transfer_server",
   "version": "1.0.0",
   "description": "to transfer text data to everyone",
-  "main": "index.js",
+  "main": "/opt/render/project/src/src/index.js",
   "scripts": {
     "build": "npx tsc",
     "start": "ts-node src/index.ts",
