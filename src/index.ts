@@ -4,13 +4,21 @@ import dotenv from "dotenv";
 import { v4 as uuidv4 } from "uuid";
 import express from "express";
 import { createServer } from "http";
+import path = require("path");
+
+
+const entryFilePath = process.env.FRONTEND_URL;
+
+// Use path.resolve to get the absolute path
+const absolutePath = path.resolve(entryFilePath as string);
 
 
 dotenv.config();
 
 const app = express();
 const isDev = app.settings.env === "development";
-const URL = isDev ? "http://localhost:3000" : process.env.FRONTEND_URL;
+// const URL = isDev ? "http://localhost:3000" : process.env.FRONTEND_URL;
+const URL = isDev ? "http://localhost:3000" : absolutePath;
 app.use(
   cors({
     origin: URL,
